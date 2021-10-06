@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+### This repo is used as an assessment during the course of the Turing modules, if you are viewing this repository outside the context of an assessment, you’re in violation of the Academic Integrity policy you agreed to as a student.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Sick Trick Wish List - Frontend
 
-## Available Scripts
+This application was built with `create-react-app`.
 
-In the project directory, you can run:
+### Set Up
 
-### `npm start`
+Fork + clone down this repo.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Run `npm install` to install dependencies for the repo.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Run `npm start` to start up your React server.
 
-### `npm test`
+Run `npm run cypress` to start up the Cypress testing server.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Expectations / Rules
 
-### `npm run build`
+Build an app for yr local sk8 rat to help them track their trick progression.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You will have 3 hours to build this application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- ![turing-bdays-screenshot](https://user-images.githubusercontent.com/51416773/132622036-217cc0ad-da6b-464a-9b8a-f4bc015dbddb.png) -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+We do want to see good commit habits - atomic commits that log small, focused changesets. Don't worry about creating GitHub issues, though.
 
-### `npm run eject`
+### Iteration 0
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Pull down the [API repo](https://github.com/turingschool-examples/sick-trick-wish-list-api). Set up instructions are in that repository's README.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Do *not* nest this inside your front-end repository.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Iteration 1
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Get all existing tricks on page load and display them on the DOM.
 
-## Learn More
+Notes:  
+- Do not worry about including the delete button for each trick at this point.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Iteration 2
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Create a controlled Form component to create a trick (look into the API documentation to see what pieces of information are expected, and what datatypes it wants each piece to be). As a user types into the input fields, the form component's state should change.  When the user clicks the `SEND IT` button, the application should update the App's state.  The new birthday should display with all of the existing birthdays. 
 
-### Code Splitting
+Notes:  
+- You can assume that the user will input correct data (i.e. a number for month and day that represent a valid date). You do not need to worry about error handling!  
+- Do not worry about making the POST request to the database yet.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Iteration 3
 
-### Analyzing the Bundle Size
+Now that the functionality is there for adding a trick, write some tests:
+* Write tests covering what should be displayed on the page when the user first visits.
+* Write a test that checks that when data is put into the form, the value is reflected in that form input.
+* Write a test to check the user flow of adding a new birthday to the DOM.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Iteration 4 (extension)
 
-### Making a Progressive Web App
+When the user makes a birthday, the application should make a post request to the API. The new birthday should still exist upon reloading the page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Note:  
+- Keep any fetch calls you write in the App component for now. If you have time to refactor your fetch calls into a separate helper file, that is fine, but it is *NOT* a requirement for this application.
 
-### Advanced Configuration
+### Iteration 5 (extension)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Delete a trick when the user clicks the `X` button.  The deletion should persist upon reloading the page.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Other Extensions
+* Add a counter for `Attempts` to each `Trick` card. User should be able to click an existing trick's `attempts` number. and increase the number representing how many times they've attemted this trick. 
+* Try writing out a few other tests to cover sad path testing for your network requests.
+* Use a fetch to get the month data from the API, rather than using the `months_data.js` file.
