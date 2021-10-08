@@ -32,7 +32,7 @@ Do *not* nest this inside your front-end repository.
 
 ### Iteration 1
 
-Get all existing tricks on page load and display them on the DOM.
+Get all existing tricks from the API on page load and display them on the DOM.
 
 Notes:  
 - Do not worry about including the delete button for each trick at this point.
