@@ -16,6 +16,8 @@ Run `npm run cypress` to start up the Cypress testing server.
 
 ### Expectations / Rules
 
+**Please, read the entirety of each iteration's description before starting to code that iteration's features. There are some helpful notes included**
+
 Build an app for yr local sk8 rat to help them track their trick progression.
 
 You will have 3 hours to build this application.
@@ -42,7 +44,9 @@ Notes:
 Create a controlled Form component to create a trick (look into the API documentation to see what pieces of information are expected, and what datatypes it wants each piece to be). As a user types into the input fields, the form component's state should change.  When the user clicks the `SEND IT` button, the application should update the App's state.  The new birthday should display with all of the existing birthdays. 
 
 Notes:  
-- You can assume that the user will input correct data (i.e. a number for month and day that represent a valid date). You do not need to worry about error handling!  
+- The `Stance` select input should contain options 'Regular' and 'Switch'
+- The `Obstacle` select input should contain options 'Flatground', 'Ledge', 'Rail', 'Stairs', and 'Pool'
+- You do not need to worry about error handling!  
 - Do not worry about making the POST request to the database yet.
 
 ### Iteration 3
