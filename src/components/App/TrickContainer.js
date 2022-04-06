@@ -1,5 +1,6 @@
 import React from 'react'
 import Trick from './Trick'
+import './TrickContainer.css'
 
 const TrickContainer = (props) => {
     console.log(props.Tricks)
