@@ -14,10 +14,10 @@ class App extends Component {
 
   componentDidMount() {
     fetch('http://localhost:3001/api/v1/tricks')
+    .then(data => data.json())
     .then(data => {
-      console.log("data!!:", data.json())
       this.setState({
-        tricks: data.tricks
+        tricks: data
       })
     })
     .catch(error => console.log("error&:", error))

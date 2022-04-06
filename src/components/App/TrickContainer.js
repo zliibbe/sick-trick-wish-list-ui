@@ -2,7 +2,7 @@ import React from 'react'
 import Trick from './Trick'
 
 const TrickContainer = (props) => {
-    console.log(props)
+    console.log(props.Tricks)
     const tricks = props.Tricks.map(trick => {
         return (
             <Trick 
