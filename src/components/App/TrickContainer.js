@@ -2,6 +2,7 @@ import React from 'react'
 import Trick from './Trick'
 
 const TrickContainer = (props) => {
+    console.log(props)
     const tricks = props.Tricks.map(trick => {
         return (
             <Trick 
@@ -9,7 +10,7 @@ const TrickContainer = (props) => {
             stance={trick.stance}
             obstacle={trick.obstacle}
             tutorial={trick.tutorial}
-            key={trick.key}
+            key={trick.id}
             />
         )
     })
