@@ -3,7 +3,13 @@ import './Trick'
 
 const Trick = (props) => {
     return (
-        <h2 className="trick-name">{props.namea}</h2>
+        <section>
+            <p className="trick-name">{props.name}</p>
+            <p className="trick-stance">{props.stance}</p>
+            <p className="trick-obstacle">{props.obstacle}</p>
+            <p className="trick-tutorial">{props.tutorial}</p>
+        </section>
+        
     )
 }
 
