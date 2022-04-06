@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import TrickContainer from './TrickContainer';
-import tricksData from './tricksData'
+// import tricksData from './tricksData'
 
 
 class App extends Component {
@@ -11,13 +11,24 @@ class App extends Component {
       tricks:[]
     }
   }
+
+  componentDidMount() {
+    fetch('http://localhost:3001/api/v1/tricks')
+    .then(data => {
+      console.log("data!!:", data.json())
+      this.setState({
+        tricks: data.tricks
+      })
+    })
+    .catch(error => console.log("error&:", error))
+  }
   
   render() {
     return (
       <main className="App">
         <h1>Sick Trick Wish List</h1>
         {/* Form */}
-        <TrickContainer Tricks={tricksData}/>
+        <TrickContainer Tricks={this.state.tricks}/>
         {/* Tricks */}
       </main>
 
