@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import TrickContainer from './TrickContainer';
-import Form from './Form'
+import TrickContainer from '../TrickContainer';
+import Form from '../Form'
 
 
 class App extends Component {
