@@ -1,12 +1,24 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import TrickContainer from './TrickContainer';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      tricks:[]
+    }
+  }
+  
   render() {
     return (
-      <div className="App">
+      <main className="App">
         <h1>Sick Trick Wish List</h1>
-      </div>
+        {/* Form */}
+        <TrickContainer />
+        {/* Tricks */}
+      </main>
+
     );
   }
 }
