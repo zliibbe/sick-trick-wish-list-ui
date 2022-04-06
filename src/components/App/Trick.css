@@ -1,7 +1,9 @@
 .trick {
     display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     border-radius: 5px;
     background-color: white;
     padding: .7rem;
+    margin: 15px;
 }
