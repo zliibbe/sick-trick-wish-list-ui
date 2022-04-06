@@ -1,5 +1,6 @@
 import React from "react"
 import './Trick'
+import './Trick.css'
 
 const Trick = (props) => {
     return (
