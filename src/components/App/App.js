@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import TrickContainer from './TrickContainer';
+import tricksData from './tricksData'
+
 
 class App extends Component {
   constructor() {
@@ -15,7 +17,7 @@ class App extends Component {
       <main className="App">
         <h1>Sick Trick Wish List</h1>
         {/* Form */}
-        <TrickContainer />
+        <TrickContainer Tricks={tricksData}/>
         {/* Tricks */}
       </main>
 
