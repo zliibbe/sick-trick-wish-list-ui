@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import TrickContainer from './TrickContainer';
-// import tricksData from './tricksData'
 
 
 class App extends Component {
