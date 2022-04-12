@@ -5,10 +5,10 @@ class Form extends React.Component {
   constructor() {
     super();
     this.state = {
-      stance: "",
-      trick: "",
-      obstacle: "",
-      tutorial: "",
+        name: "",
+        obstacle: "",
+        stance: "",
+        tutorial: ""
     };
   }
 
@@ -29,10 +29,10 @@ class Form extends React.Component {
 
   clearInputs = () => {
     this.setState({
-      stance: "",
-      trick: "",
+      name: "",
       obstacle: "",
-      tutorial: "",
+      stance: "",
+      tutorial: ""
     });
   };
 
@@ -51,11 +51,10 @@ class Form extends React.Component {
         </select>
 
         <input
-          id="trick"
           type="text"
-          name="trick"
+          name="name"
           placeholder="Name of Trick"
-          value={this.state.trick}
+          value={this.state.name}
           onChange={(event) => this.handleChange(event)}
         ></input>
 
