@@ -1,43 +1,88 @@
 import React from "react";
-import './Form.css'
+import "./Form.css";
 
 class Form extends React.Component {
-    constructor() {
-        super()
-        this.state = {}
-    }
+  constructor() {
+    super();
+    this.state = {
+      stance: "",
+      trick: "",
+      obstacle: "",
+      tutorial: "",
+    };
+  }
 
-    render() {
-        return (
-            <form className="form">
-                <select id='stance' placeholder="Choose your Stance">
-                    <option value=''>Choose your Stance</option>
-                    <option value='Regular'>Regular</option>
-                    <option value='Switch'>Switch</option>
-                </select>
-                
-                <input type='text' placeholder="Name of Trick">
-                
-                </input>
-                
-                <select name='obstacle' placeholder="Choose your Obstacle" >
-                        <option value=''>Choose your Obstacle</option>
-                        <option value='Flatground'>Flatground</option>
-                        <option value='Ledge'>Ledge</option>
-                        <option value='Rail'>Rail</option>
-                        <option value='Stairs'>Stairs</option>
-                        <option value='Pool'>Pool</option>
-                </select>
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
-                <input type='text' placeholder="Link to Tutorial">
-                    
-                </input>
+  submitTrick = (event) => {
+    event.preventDefault();
+    const newTrick = {
+      ...this.state,
+      id: Date.now(),
+    };
+    console.log('newTrick:',newTrick)
+    this.props.submitTrick(newTrick);
+    this.clearInputs();
+  };
 
-                <button>Send It!</button>
+  clearInputs = () => {
+    this.setState({
+      stance: "",
+      trick: "",
+      obstacle: "",
+      tutorial: "",
+    });
+  };
 
-            </form>
-        )
-    }
+  render() {
+    return (
+      <form className="form">
+        <select
+          id="stance"
+          name="stance"
+          placeholder="Choose your Stance"
+          onChange={(event) => this.handleChange(event)}
+        >
+          <option value="">Choose your Stance</option>
+          <option value="Regular">Regular</option>
+          <option value="Switch">Switch</option>
+        </select>
+
+        <input
+          type="text"
+          name="trick"
+          placeholder="Name of Trick"
+          value={this.state.name}
+          onChange={(event) => this.handleChange(event)}
+        ></input>
+
+        <select
+          name="obstacle"
+          placeholder="Choose your Obstacle"
+          onChange={(event) => this.handleChange(event)}
+        >
+          <option value="">Choose your Obstacle</option>
+          <option value="Flatground">Flatground</option>
+          <option value="Ledge">Ledge</option>
+          <option value="Rail">Rail</option>
+          <option value="Stairs">Stairs</option>
+          <option value="Pool">Pool</option>
+        </select>
+
+        <input
+          type="text"
+          name="tutorial"
+          placeholder="Link to Tutorial"
+          value={this.state.tutorial}
+          onChange={(event) => this.handleChange(event)}
+        ></input>
+
+        <button onClick={event => this.submitTrick(event)}>Send It!</button>
+      </form>
+    );
+  }
 }
 
-export default Form
+export default Form;

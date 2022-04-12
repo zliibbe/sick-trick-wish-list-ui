@@ -4,3 +4,8 @@
     border-radius: 10px;
     margin: 5px
 }
+
+select, input, button {
+    margin-left: 10px;
+    margin-right: 10px;
+}
