@@ -51,10 +51,11 @@ class Form extends React.Component {
         </select>
 
         <input
+          id="trick"
           type="text"
           name="trick"
           placeholder="Name of Trick"
-          value={this.state.name}
+          value={this.state.trick}
           onChange={(event) => this.handleChange(event)}
         ></input>
 
